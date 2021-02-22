@@ -80,7 +80,6 @@ def plot(date, vax, weeks_to_done_age, daily_avg):
         extrap_dates,
         extrapolated_cumsum / (POPULATION * 2 * 0.8) * 100,
         "--",
-        label="extrapolated",
         color=line_cum.get_color(),
     )
     axs[1].set_ylim([0, 100])
