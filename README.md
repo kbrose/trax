@@ -4,15 +4,15 @@ Naive tracking of Wisconsin's vaccination progress.
 
 I am not an expert, there's probably many reasons why the statistics I report here are incorrect.
 
-Raw data was obtained from https://www.dhs.wisconsin.gov/covid-19/vaccine-data.htm (see [download.sh](./download.sh) for details).
+Raw data was obtained from https://www.dhs.wisconsin.gov/covid-19/vaccine-data.htm. See below for instructions.
 
 # Current estimates
 
 ```
 $ python trax.py
-28538 average doses per day over past 7 days (-456 compared to 2 weeks ago)
-52.4 weeks (2022-02-21) for EVERY PERSON to get 2 doses
-40.7 weeks (2021-12-02) for all eligible people (over 16 years old) to get 2 doses
+28433 average doses per day over past 7 days (-914 compared to 2 weeks ago)
+52.5 weeks (2022-02-23) for EVERY PERSON to get 2 doses
+40.8 weeks (2021-12-03) for all eligible people (over 16 years old) to get 2 doses
 ```
 
 # Charts
@@ -26,6 +26,16 @@ Current vaccination progress.
 Current vaccination progress extrapolated out to 100% completion (of people who are eligible for the vaccine) using the a rolling 7 day average. Dashed lines are the extrapolations.
 
 ![extrapolated vaccination progress](./imgs/extrapolated.png)
+
+# Update data
+
+1. Go to https://www.dhs.wisconsin.gov/covid-19/vaccine-data.htm
+2. Under "Vaccine Distribution Summary" section, click "Download"
+3. Hit "cross tab"
+4. Hover over each option until you see the one called "Vax Summary - adm spk", check it
+5. Select CSV for the format
+6. Click Download
+7. Click Download again, or copy the download link into a `curl` command. Either way, save it to the `vax.csv` file
 
 # Why?
 

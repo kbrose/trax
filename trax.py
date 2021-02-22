@@ -62,14 +62,14 @@ def plot(date, vax, weeks_to_done_age, daily_avg):
         date, vax, math.ceil(weeks_to_done_age * 7)
     )
     axs[0].plot(
-        extrap_dates,
-        [daily_avg] * len(extrap_dates),
+        [date.max()] + extrap_dates,
+        [daily_avg] * (len(extrap_dates) + 1),
         "--",
         color=line_avg.get_color(),
     )
     axs[0].plot(
-        extrap_dates,
-        extrap_vax,
+        [date.max()] + extrap_dates,
+        [vax.iloc[-1]] + extrap_vax.tolist(),
         "--",
         color=line_daily.get_color(),
         alpha=0.4,
@@ -105,7 +105,7 @@ def plot_base(axs, date, vax):
 
 def extrapolate(date, vax, days_to_extrap):
     extrap_dates = [
-        date.max() + timedelta(days=n) for n in range(days_to_extrap)
+        date.max() + timedelta(days=n) for n in range(1, days_to_extrap)
     ]
     extrap_vax = pd.Series(
         [vax.iloc[-7:].tolist()[i % 7] for i in range(len(extrap_dates))]
