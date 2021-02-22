@@ -4,6 +4,8 @@ Naive tracking of Wisconsin's vaccination progress.
 
 I am not an expert, there's probably many reasons why the statistics I report here are incorrect.
 
+Raw data was obtained from https://www.dhs.wisconsin.gov/covid-19/vaccine-data.htm (see [download.sh](./download.sh) for details).
+
 ```
 $ python trax.py
 28538 average doses per day over past 7 days (-456 compared to 2 weeks ago)
