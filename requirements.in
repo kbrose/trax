@@ -1,0 +1,10 @@
+pandas
+matplotlib
+requests
+ipython
+seaborn
+
+flake8
+mypy
+black
+isort
