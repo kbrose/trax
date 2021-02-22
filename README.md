@@ -2,7 +2,7 @@
 
 Naive tracking of Wisconsin's vaccination progress.
 
-I am not an expert, there's probably many reasons why you the statistics I report here are incorrect.
+I am not an expert, there's probably many reasons why the statistics I report here are incorrect.
 
 ```
 $ python trax.py
