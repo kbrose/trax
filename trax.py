@@ -24,8 +24,12 @@ def analyze():
     daily_avg = vax.iloc[-7:].mean()
     last_week = vax.iloc[-14:-7].mean()
     print(
+        f"Data up through {date.max().date()}, recent data is usually"
+        " corrected to be higher"
+    )
+    print(
         f"{daily_avg:.0f} average doses per day over past 7 days"
-        f" ({daily_avg - last_week:.0f} compared to 2 weeks ago)"
+        f" ({daily_avg - last_week:+.0f} compared to 2 weeks ago)"
     )
 
     weeks_to_done_naive = (POPULATION * 2 - vax.sum()) / daily_avg / 7

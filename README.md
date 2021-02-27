@@ -10,9 +10,10 @@ Raw data was obtained from https://www.dhs.wisconsin.gov/covid-19/vaccine-data.h
 
 ```
 $ python trax.py
-28121 average doses per day over past 7 days (-1978 compared to 2 weeks ago)
-52.6 weeks (2022-02-27) for EVERY PERSON to get 2 doses
-40.8 weeks (2021-12-06) for all eligible people (over 16 years old) to get 2 doses
+Data up through 2021-02-26, recent data is usually corrected to be higher
+31013 average doses per day over past 7 days (+1520 compared to 2 weeks ago)
+47.2 weeks (2022-01-22) for EVERY PERSON to get 2 doses
+36.5 weeks (2021-11-08) for all eligible people (over 16 years old) to get 2 doses
 ```
 
 # Charts
@@ -40,3 +41,7 @@ Current vaccination progress extrapolated out to 100% completion (of people who 
 # Why?
 
 Tons of news sites, and even official government sites, only share the current progress. They do not estimate when the vaccinations will be completed if the current vaccination rates continue. I got tired of doing the calculation by hand, so I wrote a simple script to do it for me.
+
+```
+
+```
