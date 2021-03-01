@@ -41,7 +41,3 @@ Current vaccination progress extrapolated out to 100% completion (of people who 
 # Why?
 
 Tons of news sites, and even official government sites, only share the current progress. They do not estimate when the vaccinations will be completed if the current vaccination rates continue. I got tired of doing the calculation by hand, so I wrote a simple script to do it for me.
-
-```
-
-```
