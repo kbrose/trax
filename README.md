@@ -10,10 +10,10 @@ Raw data was obtained from https://www.dhs.wisconsin.gov/covid-19/vaccine-data.h
 
 ```
 $ python trax.py
-Data up through 2021-03-03, recent data is usually corrected to be higher
-38824 average doses per day over past 7 days (+8848 compared to 2 weeks ago)
-37.1 weeks (2021-11-17) for EVERY PERSON to get 2 doses
-28.5 weeks (2021-09-18) for all eligible people (over 16 years old) to get 2 doses
+Data up through 2021-03-04, recent data is usually corrected to be higher
+39394 average doses per day over past 7 days (+7794 compared to 2 weeks ago)
+36.3 weeks (2021-11-13) for EVERY PERSON to get 2 doses
+27.9 weeks (2021-09-15) for all eligible people (over 16 years old) to get 2 doses
 ```
 
 # Charts
