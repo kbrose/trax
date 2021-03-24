@@ -5,6 +5,9 @@ from datetime import timedelta
 import seaborn as sns
 
 POPULATION = 5_822_434  # https://en.wikipedia.org/wiki/Wisconsin
+JNJ = {
+    "2021-03-22": 43057  # This is when they started publishing manufacturer
+}
 
 
 def analyze():
@@ -20,6 +23,12 @@ def analyze():
     date = df["date"]
     vax = df["vax"]
 
+    # get % of doses that were from JNJ
+    try:
+        jnj_rate = JNJ[date.max().date().isoformat()] / vax.sum()
+    except KeyError:
+        raise RuntimeError("Please update the JNJ dict in this file.")
+
     # Compute the daily averages
     daily_avg = vax.iloc[-7:].mean()
     last_week = vax.iloc[-14:-7].mean()
@@ -32,13 +41,14 @@ def analyze():
         f" ({daily_avg - last_week:+.0f} compared to 2 weeks ago)"
     )
 
-    weeks_to_done_naive = (POPULATION * 2 - vax.sum()) / daily_avg / 7
+    doses_needed = (jnj_rate * POPULATION) + ((1 - jnj_rate) * POPULATION * 2)
+    weeks_to_done_naive = (doses_needed - vax.sum()) / daily_avg / 7
     done_date_naive = df["date"].max() + timedelta(
         days=weeks_to_done_naive * 7
     )
     print(
         f"{weeks_to_done_naive:.1f} weeks ({done_date_naive:%Y-%m-%d}) "
-        "for EVERY PERSON to get 2 doses"
+        "for EVERY PERSON to get fully immunized"
     )
 
     # DHS says 20% of wisconsinites are under 16 and not currently eligible
@@ -46,7 +56,7 @@ def analyze():
     done_date_age = df["date"].max() + timedelta(days=weeks_to_done_age * 7)
     print(
         f"{weeks_to_done_age:.1f} weeks ({done_date_age:%Y-%m-%d}) "
-        "for all eligible people (over 16 years old) to get 2 doses"
+        "for all eligible people (over 16 years old) to get fully immunized"
     )
 
     plot(date, vax, weeks_to_done_age, daily_avg)

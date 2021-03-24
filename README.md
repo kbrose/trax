@@ -10,10 +10,10 @@ Raw data was obtained from https://www.dhs.wisconsin.gov/covid-19/vaccine-data.h
 
 ```
 $ python trax.py
-Data up through 2021-03-21, recent data is usually corrected to be higher
-44733 average doses per day over past 7 days (+1172 compared to 2 weeks ago)
-29.7 weeks (2021-10-14) for EVERY PERSON to get 2 doses
-22.2 weeks (2021-08-23) for all eligible people (over 16 years old) to get 2 doses
+Data up through 2021-03-22, recent data is usually corrected to be higher
+45262 average doses per day over past 7 days (+1554 compared to 2 weeks ago)
+28.9 weeks (2021-10-10) for EVERY PERSON to get fully immunized
+21.9 weeks (2021-08-22) for all eligible people (over 16 years old) to get fully immunized
 ```
 
 # Charts
@@ -31,13 +31,15 @@ Current vaccination progress extrapolated out to 100% completion (of people who 
 # Update data
 
 1. Go to https://www.dhs.wisconsin.gov/covid-19/vaccine-data.htm
-2. Under "Vaccine Distribution Summary" section, click "Download"
+2. Under "Vaccine Distribution Summary" section, click "Download", make sure you're on "Allocation and Administration" tab within the tablue view, not the "Providers" tab.
 3. Hit "cross tab"
-4. Hover over each option until you see the one called "Vax Summary - adm spk", check it
+4. Hover over each option until you see the one called "AdministeredByDay", check it
 5. Select CSV for the format
 6. Click Download
 7. Click Download again, or copy the download link into a `curl` command. Either way, save it to the `vax.csv` file
 
 # Why?
 
-Tons of news sites, and even official government sites, only share the current progress. They do not estimate when the vaccinations will be completed if the current vaccination rates continue. I got tired of doing the calculation by hand, so I wrote a simple script to do it for me.
+Tons of news sites, and even official government sites, only share the current progress. ~~They do not estimate when the vaccinations will be completed if the current vaccination rates continue.~~ I got tired of doing the calculation by hand, so I wrote a simple script to do it for me.
+
+_EDIT:_ This is no longer true. On March 23rd, [NPR started having predictions](https://www.npr.org/sections/health-shots/2021/01/28/960901166/how-is-the-covid-19-vaccination-campaign-going-in-your-state) at a national level of when the vaccinations will be complete. NPR also cites researchers saying that herd immunity can be expected when the population is around 70%-85% vaccinated.
