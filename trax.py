@@ -6,7 +6,8 @@ import seaborn as sns
 
 POPULATION = 5_822_434  # https://en.wikipedia.org/wiki/Wisconsin
 JNJ = {
-    "2021-03-22": 43057  # This is when they started publishing manufacturer
+    "2021-03-22": 43_057,  # This is when they started publishing manufacturer
+    "2021-03-25": 51_190,
 }
 
 
@@ -27,7 +28,10 @@ def analyze():
     try:
         jnj_rate = JNJ[date.max().date().isoformat()] / vax.sum()
     except KeyError:
-        raise RuntimeError("Please update the JNJ dict in this file.")
+        raise RuntimeError(
+            "Please update the JNJ dict in this file:"
+            f"no data found for {date.max().date().isoformat()}"
+        )
 
     # Compute the daily averages
     daily_avg = vax.iloc[-7:].mean()
