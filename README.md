@@ -10,10 +10,10 @@ Raw data was obtained from https://www.dhs.wisconsin.gov/covid-19/vaccine-data.h
 
 ```
 $ python trax.py
-Data up through 2021-03-22, recent data is usually corrected to be higher
-45262 average doses per day over past 7 days (+1554 compared to 2 weeks ago)
-28.9 weeks (2021-10-10) for EVERY PERSON to get fully immunized
-21.9 weeks (2021-08-22) for all eligible people (over 16 years old) to get fully immunized
+Data up through 2021-03-27, recent data is usually corrected to be higher
+49717 average doses per day over past 7 days (+2703 compared to 2 weeks ago)
+25.4 weeks (2021-09-20) for EVERY PERSON to get fully immunized
+19.0 weeks (2021-08-06) for all eligible people (over 16 years old) to get fully immunized
 ```
 
 # Charts

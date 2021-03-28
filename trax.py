@@ -8,6 +8,7 @@ POPULATION = 5_822_434  # https://en.wikipedia.org/wiki/Wisconsin
 JNJ = {
     "2021-03-22": 43_057,  # This is when they started publishing manufacturer
     "2021-03-25": 51_190,
+    "2021-03-27": 53_723,
 }
 
 
